@@ -1,8 +1,15 @@
-import {Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-/** @title Form field appearance variants */
 @Component({
-  selector: 'form-field-appearance-example',
-  templateUrl: 'form-field-appearance-example.html',
+  selector: 'app-log-in',
+  templateUrl: './log-in.component.html',
+  styleUrls: ['./log-in.component.css']
 })
-export class FormFieldAppearanceExample {}
+export class LogInComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
