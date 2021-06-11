@@ -1,22 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ActionsPesosComponent } from './actions-pesos/actions-pesos.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
-import { LogInComponent } from './log-in/log-in.component';
+import { LoginComponent } from './login/login.component';
+import { ActionsComponent } from './actions/actions.component';
+import { RouterModule } from '@angular/router';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ActionsPesosComponent,
     RegisterComponent,
-    LogInComponent,
+    LoginComponent,
+    ActionsComponent,
+    AccountComponent,
   ],
-
   imports: [
     BrowserModule,
+    AppRoutingModule,
     NoopAnimationsModule,
+    RouterModule.forRoot([
+      { path: 'actions', component: ActionsComponent },
+      { path: 'balance', component: AccountComponent },
+      { path: 'register', component: RegisterComponent },
+      { path: '', component: LoginComponent },
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent],
